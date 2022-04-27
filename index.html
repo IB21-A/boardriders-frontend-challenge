@@ -24,10 +24,19 @@
       </div>
     </nav>
     <section id="video">
-      <div class="container flex flex-center">Watch the video</div>
+      <div class="video-container flex">
+        <video class="video-bg" autoplay muted loop>
+          <source src="assets/video_desktop.mp4" type="video/mp4" />
+        </video>
+        <a href="https://www.youtube.com/watch?v=Qbzbxsk8qa8" target="_blank">
+          <div class="btn-video uppercase ff-condensed">Watch the video</div>
+        </a>
+      </div>
     </section>
     <section>
-      <div class="container container-sm text-center">
+      <div
+        class="container container-sm text-center ltr-spacing-1 fs-400 fw-300"
+      >
         <p>
           No matter where you're from, no matter where you're going-the sea
           knows no difference. Its not how we look, what we own, or the
@@ -43,8 +52,12 @@
         </p>
       </div>
     </section>
-    <section>
-      <div class="container"><h1>Watch the Episodes</h1></div>
+    <section id="cards">
+      <div class="flex container">
+        <h1 class="uppercase ff-sans-normal ltr-spacing-1 fw-700">
+          Watch the Episodes
+        </h1>
+      </div>
       <div class="slider-container">slides go here</div>
     </section>
   </body>
