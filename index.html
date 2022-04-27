@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Boardriders | Thom Zolghadr</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
+    <script
+      defer
+      src="https://unpkg.com/swiper@8/swiper-bundle.min.js"
+    ></script>
+    <script defer src="index.js"></script>
   </head>
   <body>
     <section id="hero">
@@ -13,7 +23,7 @@
     </section>
     <nav>
       <div class="container">
-        <ul class="flex flex-row uppercase ff-condensed text-grey">
+        <ul class="flex uppercase ff-condensed text-grey">
           <li><a href="#">Home</a></li>
           <li><a href="#">Hawaii</a></li>
           <li><a href="#">Japan</a></li>
@@ -44,7 +54,7 @@
           about this sensation, this magic that connects us all.
         </p>
         <p>
-          To the girls who see the horizon not as a limit, but as an invitation
+          To the girls who see the horizon not as a limit, but as an invitation.
           To the girls who know they can find family wherever there is salt and
           sand. It's a freedom, it's a comfort; it's familiarity in a foreign
           land. It's the bond that we forge across the sea, through the sea. And
@@ -54,11 +64,26 @@
     </section>
     <section id="cards">
       <div class="flex container">
-        <h1 class="uppercase ff-sans-normal ltr-spacing-1 fw-700">
+        <h1 class="uppercase ff-sans-normal ltr-spacing-1 fw-700 mb-2">
           Watch the Episodes
         </h1>
       </div>
-      <div class="slider-container">slides go here</div>
     </section>
+    <div class="test-container">
+      <div class="movie-card">
+        <!-- <div class="image-container"> -->
+        <img
+          class="movie-image"
+          src="./assets/carousel/hawaii.jpg"
+          alt="surfers in hawaii"
+        />
+        <!-- </div>
+        <div class="button-container"> -->
+        <div class="text-center btn-black ff-condensed">Watch Now</div>
+        <!-- </div> -->
+      </div>
+    </div>
+
+    <section id="whitespace"></section>
   </body>
 </html>
