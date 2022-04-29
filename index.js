@@ -1,5 +1,5 @@
 let modal;
-
+var player;
 document.addEventListener("DOMContentLoaded", function () {
   handleResize();
 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const handleResize = () => {
   updateVideo();
   updateNavigation();
-  resizeYoutube();
+  player && resizeYoutube();
 };
 
 const updateVideo = () => {
@@ -30,6 +30,31 @@ const updateVideo = () => {
     return video.setAttribute("src", "/assets/video_desktop.mp4");
   }
 };
+
+// 2. This code loads the IFrame Player API code asynchronously.
+var tag = document.createElement("script");
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName("script")[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player("player", {
+    height: "349",
+    width: "560",
+    videoId: "iYAcEdg_7BU",
+    playerVars: {
+      playsinline: 1,
+    },
+    // events: {
+    //   'onReady': onPlayerReady,
+    //   'onStateChange': onPlayerStateChange
+    // }
+  });
+}
 
 const resizeYoutube = () => {
   const video = document.querySelector("iframe");
@@ -133,6 +158,8 @@ const openModal = (modal) => {
   let overlay = document.createElement("div");
   overlay.id = "modal-overlay";
   document.body.appendChild(overlay);
+
+  player.playVideo();
 };
 
 const closeModal = (modal) => {
@@ -140,6 +167,8 @@ const closeModal = (modal) => {
   modal.removeAttribute("open");
   document.removeEventListener("keyup", escClose);
   document.body.removeChild(document.getElementById("modal-overlay"));
+
+  player.pauseVideo();
 };
 
 const escClose = (e) => {
