@@ -24,10 +24,10 @@ const updateVideoSrc = () => {
   const video = document.querySelector("video");
 
   if (window.innerWidth < 991 && !/(mobile.mp4)/.test(video.src)) {
-    return video.setAttribute("src", "/assets/video_mobile.mp4");
+    return video.setAttribute("src", "./assets/video_mobile.mp4");
   }
   if (window.innerWidth > 991 && !/(desktop.mp4)/.test(video.src)) {
-    return video.setAttribute("src", "/assets/video_desktop.mp4");
+    return video.setAttribute("src", "./assets/video_desktop.mp4");
   }
 };
 
