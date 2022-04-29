@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boardriders | Thom Zolghadr</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
+    <script
+      defer
+      src="https://unpkg.com/swiper@8/swiper-bundle.min.js"
+    ></script>
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    <section id="hero">
+      <div class="container"></div>
+    </section>
+
+    <nav>
+      <div class="nav-swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper uppercase ff-condensed text-grey">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <a href="#">Home</a>
+          </div>
+          <div class="swiper-slide"><a href="#">Hawaii</a></div>
+          <div class="swiper-slide"><a href="#">Japan</a></div>
+          <div class="swiper-slide"><a href="#">China</a></div>
+          <div class="swiper-slide"><a href="#">Sri lanka</a></div>
+          <div class="swiper-slide"><a href="#">Morocco</a></div>
+        </div>
+      </div>
+    </nav>
+    <section id="video">
+      <div id="video-modal" class="modal" role="dialog" tabindex="-1">
+        <div class="model-inner">
+          <div class="modal-header">
+            <button
+              class="modal-close"
+              data-id="video-modal"
+              aria-label="Close"
+            >
+              &times;
+            </button>
+          </div>
+          <div class="youtube-container">
+            <div id="player"></div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container flex">
+        <!-- MODAL -->
+
+        <!-- END MODAL -->
+        <video class="video-bg" autoplay muted playsinline loop>
+          <source src="./assets/video_desktop.mp4" type="video/mp4" />
+        </video>
+        <!-- <a href="https://www.youtube.com/watch?v=Qbzbxsk8qa8" target="_blank"> -->
+        <div
+          class="btn-video uppercase ff-condensed modal-open"
+          data-id="video-modal"
+        >
+          Watch the video
+        </div>
+
+        <!-- </a> -->
+      </div>
+    </section>
+    <section>
+      <div class="container container-sm text-center ltr-spacing-1 fw-300">
+        <p>
+          No matter where you're from, no matter where you're going-the sea
+          knows no difference. Its not how we look, what we own, or the
+          lanquages we speak-here we all have one voice. Know the Feeling is
+          about this sensation, this magic that connects us all.
+        </p>
+        <p>
+          To the girls who see the horizon not as a limit, but as an invitation.
+          To the girls who know they can find family wherever there is salt and
+          sand. It's a freedom, it's a comfort; it's familiarity in a foreign
+          land. It's the bond that we forge across the sea, through the sea. And
+          when you feel it, you'll know. We know the feeling
+        </p>
+      </div>
+    </section>
+    <section id="cards">
+      <div class="flex container">
+        <h1 class="uppercase ff-sans-normal ltr-spacing-1 fw-700 mb-2">
+          Watch the Episodes
+        </h1>
+      </div>
+    </section>
+    <!-- Swiper -->
+    <div class="swiper episode-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="./assets/carousel/hawaii.jpg" />
+            <div class="text-center btn-black ff-condensed">Watch Now</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="./assets/carousel/china.jpg" />
+            <div class="text-center btn-black ff-condensed">Watch Now</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="./assets/carousel/japan.jpeg" />
+            <div class="text-center btn-black ff-condensed">Watch Now</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="./assets/carousel/sri_lanka.jpeg" />
+            <div class="text-center btn-black ff-condensed">Watch Now</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="./assets/carousel/morocco.jpeg" />
+            <div class="text-center btn-black ff-condensed">Watch Now</div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="swiper-pagination"
+        style="--swiper-pagination-bullet-size: 14px"
+      ></div>
+      <div
+        class="swiper-button-prev"
+        style="--swiper-navigation-color: black"
+      ></div>
+      <div
+        class="swiper-button-next"
+        style="--swiper-navigation-color: black"
+      ></div>
+    </div>
+
+    <footer id="whitespace"></footer>
+  </body>
+</html>
