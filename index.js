@@ -15,12 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const handleResize = () => {
-  updateVideo();
-  updateNavigation();
+  updateVideoSrc();
+  toggleNavigationSwiper();
   player && resizeYoutube();
 };
 
-const updateVideo = () => {
+const updateVideoSrc = () => {
   const video = document.querySelector("video");
 
   if (window.innerWidth < 991 && !/(mobile.mp4)/.test(video.src)) {
@@ -72,9 +72,7 @@ const resizeYoutube = () => {
   }
 };
 
-const updateNavigation = () => {
-  const navigation = document.querySelector("nav");
-
+const toggleNavigationSwiper = () => {
   if (window.innerWidth < 991) {
     return navSwiper.enable();
   }
