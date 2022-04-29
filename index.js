@@ -8,10 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   loadImageSwiper();
+  loadNavigationSwiper();
 });
 
 const handleResize = () => {
   updateVideo();
+  updateNavigation();
 };
 
 const updateVideo = () => {
@@ -22,6 +24,18 @@ const updateVideo = () => {
   }
   if (window.innerWidth > 991 && !/(desktop.mp4)/.test(video.src)) {
     return video.setAttribute("src", "/assets/video_desktop.mp4");
+  }
+};
+
+const updateNavigation = () => {
+  const navigation = document.querySelector("nav");
+
+  if (window.innerWidth < 991) {
+    return navSwiper.enable();
+  }
+  if (window.innerWidth > 991) {
+    navSwiper.slideTo(0, 1, false);
+    return navSwiper.disable();
   }
 };
 
@@ -63,3 +77,17 @@ const loadImageSwiper = () => {
     },
   });
 };
+
+// const loadNavigationSwiper = () => {
+const navSwiper = new Swiper(".nav-swiper", {
+  // Optional parameters
+  // autoHeight: true,
+
+  direction: "horizontal",
+  loop: false,
+  spaceBetween: 50,
+  speed: 400,
+  slidesPerView: 4.5,
+  // Navigation arrows
+});
+// };
