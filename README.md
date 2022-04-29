@@ -28,7 +28,7 @@ Mobile – initially show 2.5 images. Allow user to swipe horizontally to see th
 ## What I Did
 
 I used SwiperJS to handle the carousel and horizontal slider in mobile navigation.
-In order to to make the mobile navigation dynamic/reusable, I used javascript to call a method on the navigation swiper to reset the position while using CSS to center the navigation slides.
+In order to to make the mobile navigation dynamic/reusable, I used javascript to call a method on the navigation swiper to reset the position and disable the slider while using CSS to center the navigation slides.
 
 Safari and iOS are picky when it comes to the video autoplay. It should run unless your phone is on low battery or your laptop is not plugged in or in low power mode.
 
@@ -36,6 +36,8 @@ I used YouTube's Iframe API to generate an IFrame with callable controls. This m
 
 The Text Blob was styled as closely to the original mock ups as I could without having access to/knowledge of the original font.
 
-Image Carousel has had it's navigation replaced with an svg to more closely match the mockup. I also dug into the SwiperJS CSS to see how I could override the styling to make the pagination match the mockup.
+Image Carousel has had it's navigation replaced with an svg to more closely match the mockup. I also dug into the SwiperJS CSS to see how I could override the styling to make the pagination match the mockup. 
+
+I added a little bit of white space in the footer to let the bottom of the page breathe.
 
 ### [View this Project Live](https://www.thomcodes.com/boardriders-frontend-challenge/)
