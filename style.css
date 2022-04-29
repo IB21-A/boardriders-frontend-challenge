@@ -275,11 +275,13 @@ video {
     background-repeat: no-repeat;
     background-size: cover;
   }
+}
 
+@media screen and (max-width: 991px) {
   /* Hide Navigation and Pagination at small screen sizes */
-  .swiper-button-prev,
-  .swiper-button-next,
-  .swiper-pagination-bullet {
+  .episode-swiper .swiper-button-prev,
+  .episode-swiper .swiper-button-next,
+  .episode-swiper .swiper-pagination-bullet {
     display: none;
   }
 
