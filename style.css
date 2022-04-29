@@ -206,7 +206,7 @@ nav a {
 }
 
 #video {
-  margin: 4rem 0 2rem 0;
+  margin-top: max(3vw, 1rem);
 }
 
 video {
@@ -217,7 +217,7 @@ video {
 .video-container {
   width: 90%;
   margin-inline: auto;
-  min-height: 60vh;
+  min-height: 80vw;
   position: relative;
   overflow: hidden;
 }
@@ -274,6 +274,14 @@ video {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  #video {
+    margin: 4rem 0 2rem 0;
+  }
+
+  .video-container {
+    min-height: 60vh;
   }
 }
 
