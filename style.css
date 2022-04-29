@@ -226,6 +226,10 @@ nav a {
   margin-left: 20%;
 }
 
+footer {
+  height: 4vw;
+}
+
 #video {
   margin-top: max(3vw, 1rem);
 }
@@ -334,6 +338,10 @@ video {
   .swiper-slide .card {
     gap: 1rem;
   }
+
+  .swiper.episode-swiper {
+    margin-left: 5%;
+  }
 }
 
 .nav-swiper .swiper-slide {
@@ -344,7 +352,6 @@ video {
 /* SWIPER OVERRIDES */
 /* Override swiper for animation */
 .swiper.episode-swiper {
-  width: 100%;
   height: max-content;
   /* border: 1px solid dodgerblue; */
   padding: 1rem 0 2.5rem 0;
@@ -446,9 +453,15 @@ video {
   display: none;
 }
 
-.swiper-button-prev {
+.episode-swiper .swiper-button-prev {
   transform: rotate(180deg);
+  left: 30px;
 }
+
+.episode-swiper .swiper-button-next {
+  right: 30px;
+}
+
 /* END SWIPER OVERRIDE */
 
 /* MODAL */
