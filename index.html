@@ -24,9 +24,7 @@
 
     <nav>
       <div class="nav-swiper">
-        <!-- Additional required wrapper -->
         <div class="swiper-wrapper uppercase ff-condensed text-grey">
-          <!-- Slides -->
           <div class="swiper-slide">
             <a href="#">Home</a>
           </div>
@@ -39,6 +37,7 @@
       </div>
     </nav>
     <section id="video">
+      <!-- MODAL -->
       <div id="video-modal" class="modal" role="dialog" tabindex="-1">
         <div class="model-inner">
           <div class="modal-header">
@@ -56,21 +55,17 @@
         </div>
       </div>
       <div class="video-container flex">
-        <!-- MODAL -->
-
         <!-- END MODAL -->
         <video class="video-bg" autoplay muted playsinline loop>
           <source src="./assets/video_desktop.mp4" type="video/mp4" />
         </video>
-        <!-- <a href="https://www.youtube.com/watch?v=Qbzbxsk8qa8" target="_blank"> -->
+
         <div
           class="btn-video uppercase ff-condensed modal-open"
           data-id="video-modal"
         >
           Watch the video
         </div>
-
-        <!-- </a> -->
       </div>
     </section>
     <section>
@@ -96,55 +91,55 @@
           Watch the Episodes
         </h1>
       </div>
-    </section>
-    <!-- Swiper -->
-    <div class="swiper episode-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="card">
-            <img src="./assets/carousel/hawaii.jpg" />
-            <div class="text-center btn-black ff-condensed">Watch Now</div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card">
-            <img src="./assets/carousel/china.jpg" />
-            <div class="text-center btn-black ff-condensed">Watch Now</div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card">
-            <img src="./assets/carousel/japan.jpeg" />
-            <div class="text-center btn-black ff-condensed">Watch Now</div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card">
-            <img src="./assets/carousel/sri_lanka.jpeg" />
-            <div class="text-center btn-black ff-condensed">Watch Now</div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card">
-            <img src="./assets/carousel/morocco.jpeg" />
-            <div class="text-center btn-black ff-condensed">Watch Now</div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="swiper-pagination"
-        style="--swiper-pagination-bullet-size: 14px"
-      ></div>
-      <div
-        class="swiper-button-prev"
-        style="--swiper-navigation-color: black"
-      ></div>
-      <div
-        class="swiper-button-next"
-        style="--swiper-navigation-color: black"
-      ></div>
-    </div>
 
+      <!-- Swiper -->
+      <div class="swiper episode-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="card ff-condensed text-center">
+              <img src="./assets/carousel/hawaii.jpg" />
+              <div class="btn-black">Watch Now</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <img src="./assets/carousel/japan.jpeg" />
+              <div class="btn-black">Watch Now</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <img src="./assets/carousel/china.jpg" />
+              <div class="btn-black">Watch Now</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <img src="./assets/carousel/sri_lanka.jpeg" />
+              <div class="btn-black">Watch Now</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <img src="./assets/carousel/morocco.jpeg" />
+              <div class="btn-black">Watch Now</div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="swiper-pagination"
+          style="--swiper-pagination-bullet-size: 14px"
+        ></div>
+        <div
+          class="swiper-button-prev"
+          style="--swiper-navigation-color: black"
+        ></div>
+        <div
+          class="swiper-button-next"
+          style="--swiper-navigation-color: black"
+        ></div>
+      </div>
+    </section>
     <footer id="whitespace"></footer>
   </body>
 </html>
