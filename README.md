@@ -32,7 +32,7 @@ In order to to make the mobile navigation dynamic/reusable, I used javascript to
 
 Safari and iOS are picky when it comes to the video autoplay. It should run unless your phone is on low battery or your laptop is not plugged in or in low power mode.
 
-I used YouTube's Iframe API to generate an IFrame with callable controls. This made it possible to easily start/pause the video when the modal is opened or closed.
+For the modal I used YouTube's Iframe API to generate an IFrame with callable controls. This made it possible to easily start/pause the video when the modal is opened or closed.
 
 The Text Blob was styled as closely to the original mock ups as I could without having access to/knowledge of the original font.
 
