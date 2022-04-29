@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto:wght@100;300;400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@100;300;400;900&display=swap");
 
 :root {
   --clr-accent: #ccc8bd;
@@ -139,6 +139,9 @@ select {
 .fw-300 {
   font-weight: 300;
 }
+.fw-400 {
+  font-weight: 400;
+}
 
 .fw-700 {
   font-weight: 700;
@@ -272,6 +275,9 @@ video {
 }
 
 #cards h1 {
+  font-size: 1.75rem;
+  transform: scale(1, 1.25);
+  text-rendering: optimizeLegibility;
   white-space: nowrap;
 }
 
