@@ -156,8 +156,8 @@ const loadImageSwiper = () => {
     },
 
     breakpoints: {
-      // when window width is >= 320px
-      320: {
+      // when window width is >= 200px
+      200: {
         slidesPerView: 2.5,
         spaceBetween: 20,
       },
