@@ -130,7 +130,7 @@ const navSwiper = new Swiper(".nav-swiper", {
   loop: false,
   spaceBetween: 50,
   speed: 400,
-  slidesPerView: 4.5,
+  slidesPerView: 3,
 });
 
 // Large Image Carousel Swiper
