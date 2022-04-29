@@ -3,6 +3,10 @@
 You will build a responsive, static page with some interactivity. Please refer to the mobile and desktop mocks for guidance. For functionality requiring javascript, you may write your own vanilla js or use libraries. Example, jquery, swiper.js, etc.
 Breakdown of the mock:
 
+#### [View Mobile Mockup](https://www.thomcodes.com/boardriders-frontend-challenge/mock_mobile.jpg)
+
+#### [View Desktop Mockup](https://www.thomcodes.com/boardriders-frontend-challenge/mock_desktop.jpg)
+
 ### 1. Hero menu
 
 Display the appropriate hero banner whether desktop or mobile. Use 991 pixels width as threshold for desktop and mobile. The menu links can link to whatever you want. For mobile, the menu is a horizontal slider.
