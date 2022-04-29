@@ -10,8 +10,6 @@
   --ff-sans-condensed: "Roboto Condensed", sans-serif;
   --ff-work-sans: "Work Sans", sans-serif;
 
-  --fs-400: 1em;
-
   --transition: all 0.3s linear;
 }
 
@@ -39,12 +37,6 @@ blockquote,
 dl,
 dd {
   margin: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
-  list-style: none;
 }
 
 /* Set core root defaults */
@@ -169,10 +161,6 @@ select {
   font-weight: 700;
 }
 
-.fs-400 {
-  font-size: var(--fs-40);
-}
-
 .ltr-spacing-1 {
   letter-spacing: 0.1em;
 }
@@ -188,17 +176,10 @@ select {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* overflow: hidden; */
 }
 
 nav {
   background-color: var(--clr-accent);
-}
-
-nav ul {
-  margin: 0;
-
-  list-style: none;
 }
 
 nav {
