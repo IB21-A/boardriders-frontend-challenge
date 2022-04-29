@@ -49,20 +49,12 @@ function onYouTubeIframeAPIReady() {
     playerVars: {
       playsinline: 1,
     },
-    // events: {
-    //   'onReady': onPlayerReady,
-    //   'onStateChange': onPlayerStateChange
-    // }
   });
 }
 
 const resizeYoutube = () => {
   const video = document.querySelector("iframe");
-  console.log(video.height);
-  // console.log(video.height != "349");
-  console.log(video.height === "349");
-
-  if (window.innerWidth > 560 && video.height !== "349") {
+  if (window.innerWidth > 560) {
     console.log("reset");
     // Reset to default size
     video.setAttribute("height", "349");
@@ -74,6 +66,7 @@ const resizeYoutube = () => {
     let height = window.innerWidth * 0.5625;
     video.setAttribute("height", `${height}`);
     video.setAttribute("width", `${window.innerWidth}`);
+    console.log(window.innerWidth);
   }
 };
 
