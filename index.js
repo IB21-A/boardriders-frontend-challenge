@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   loadImageSwiper();
-  loadNavigationSwiper();
 });
 
 const handleResize = () => {
@@ -34,7 +33,7 @@ const updateNavigation = () => {
     return navSwiper.enable();
   }
   if (window.innerWidth > 991) {
-    navSwiper.slideTo(0, 1, false);
+    navSwiper.slideTo(0, 0, false);
     return navSwiper.disable();
   }
 };
@@ -78,7 +77,6 @@ const loadImageSwiper = () => {
   });
 };
 
-// const loadNavigationSwiper = () => {
 const navSwiper = new Swiper(".nav-swiper", {
   // Optional parameters
   // autoHeight: true,
@@ -90,4 +88,3 @@ const navSwiper = new Swiper(".nav-swiper", {
   slidesPerView: 4.5,
   // Navigation arrows
 });
-// };
