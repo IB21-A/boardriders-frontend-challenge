@@ -69,20 +69,96 @@
         </h1>
       </div>
     </section>
-    <div class="test-container">
-      <div class="movie-card">
-        <!-- <div class="image-container"> -->
-        <img
-          class="movie-image"
-          src="./assets/carousel/hawaii.jpg"
-          alt="surfers in hawaii"
-        />
-        <!-- </div>
-        <div class="button-container"> -->
-        <div class="text-center btn-black ff-condensed">Watch Now</div>
-        <!-- </div> -->
+    <!-- ADDING SWIPER -->
+    <!-- Swiper -->
+    <div class="swiper episode-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="/assets/carousel/hawaii.jpg" />
+            <div class="text-center btn-black ff-condensed">Watch Now</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="/assets/carousel/china.jpg" />
+            <div class="text-center btn-black ff-condensed">Watch Now</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="/assets/carousel/japan.jpeg" />
+            <div class="text-center btn-black ff-condensed">Watch Now</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="/assets/carousel/sri_lanka.jpeg" />
+            <div class="text-center btn-black ff-condensed">Watch Now</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="/assets/carousel/morocco.jpeg" />
+            <div class="text-center btn-black ff-condensed">Watch Now</div>
+          </div>
+        </div>
       </div>
+      <div
+        class="swiper-pagination"
+        style="--swiper-pagination-bullet-size: 14px"
+      ></div>
+      <div
+        class="swiper-button-prev"
+        style="--swiper-navigation-color: black"
+      ></div>
+      <div
+        class="swiper-button-next"
+        style="--swiper-navigation-color: black"
+      ></div>
     </div>
+    <!-- END ADDING SWIPER -->
+    <!-- SWIPER SCRIPTS-->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        // Optional parameters
+        autoHeight: true,
+        direction: "horizontal",
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        speed: 400,
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        breakpoints: {
+          // when window width is >= 320px
+          320: {
+            slidesPerView: 2.5,
+            spaceBetween: 20,
+          },
+          // when window width is >= 991px
+          991: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+            grabCursor: true,
+          },
+        },
+      });
+    </script>
+    <!-- END SWIPER SCRIPTS -->
 
     <section id="whitespace"></section>
   </body>
