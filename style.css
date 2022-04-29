@@ -470,10 +470,10 @@ footer {
   background-repeat: no-repeat;
   background-size: 150%;
   background-position: center;
-  background-color: rgba(242, 241, 237, 0.2);
+  /* background-color: rgba(242, 241, 237, 0.2);
   min-height: 200px;
   min-width: 50px;
-  top: 35%;
+  top: 35%; */
 }
 
 .swiper-button-next::after,
