@@ -1,3 +1,5 @@
+let modal;
+
 document.addEventListener("DOMContentLoaded", function () {
   handleResize();
 
@@ -6,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
     clearTimeout(timeout);
     timeout = setTimeout(handleResize, 100);
   };
+
+  initializeModalButton();
 
   loadImageSwiper();
 });
@@ -84,3 +88,40 @@ const navSwiper = new Swiper(".nav-swiper", {
   speed: 400,
   slidesPerView: 4.5,
 });
+
+const initializeModalButton = () => {
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("modal-open")) {
+      console.log(e.target.dataset);
+      modal = document.getElementById(e.target.dataset.id);
+      console.log(modal);
+      openModal(modal);
+    } else if (e.target.classList.contains("modal-close")) {
+      closeModal(modal);
+    } else {
+      return;
+    }
+  });
+};
+
+const openModal = (modal) => {
+  document.body.style.overflow = "hidden";
+  modal.setAttribute("open", "true");
+  document.addEventListener("keyup", escClose);
+  let overlay = document.createElement("div");
+  overlay.id = "modal-overlay";
+  document.body.appendChild(overlay);
+};
+
+const closeModal = (modal) => {
+  document.body.style.overflow = "auto";
+  modal.removeAttribute("open");
+  document.removeEventListener("keyup", escClose);
+  document.body.removeChild(document.getElementById("modal-overlay"));
+};
+
+const escClose = (e) => {
+  if (e.key === "Escape") {
+    closeModal(modal);
+  }
+};
