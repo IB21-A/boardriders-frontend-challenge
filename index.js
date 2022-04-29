@@ -63,9 +63,11 @@ const resizeYoutube = () => {
     // Resize iframe
     const video = document.querySelector("iframe");
     // to calculate 16:9 height, multiply width by 56.25%
-    let height = window.innerWidth * 0.5625;
+    // Subtracting width to allow for margin
+    let newWidth = window.innerWidth - 10;
+    let height = (window.innerWidth - 16) * 0.5625;
     video.setAttribute("height", `${height}`);
-    video.setAttribute("width", `${window.innerWidth}`);
+    video.setAttribute("width", `${newWidth}`);
     console.log(window.innerWidth);
   }
 };
@@ -145,6 +147,7 @@ const initializeModalButton = () => {
 };
 
 const openModal = (modal) => {
+  player && resizeYoutube();
   document.body.style.overflow = "hidden";
   modal.setAttribute("open", "true");
   document.addEventListener("keyup", escClose);
