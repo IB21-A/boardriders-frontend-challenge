@@ -16,11 +16,12 @@ const handleResize = () => {
 
 const updateVideo = () => {
   const video = document.querySelector("video");
-  console.log(video.src);
-  if (window.innerWidth < 991) {
-    video.setAttribute("src", "/assets/video_mobile.mp4");
-  } else {
-    video.setAttribute("src", "/assets/video_desktop.mp4");
+
+  if (window.innerWidth < 991 && !/(mobile.mp4)/.test(video.src)) {
+    return video.setAttribute("src", "/assets/video_mobile.mp4");
+  }
+  if (window.innerWidth > 991 && !/(desktop.mp4)/.test(video.src)) {
+    return video.setAttribute("src", "/assets/video_desktop.mp4");
   }
 };
 
