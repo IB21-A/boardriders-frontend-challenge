@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const handleResize = () => {
   updateVideo();
   updateNavigation();
+  resizeYoutube();
 };
 
 const updateVideo = () => {
@@ -27,6 +28,27 @@ const updateVideo = () => {
   }
   if (window.innerWidth > 991 && !/(desktop.mp4)/.test(video.src)) {
     return video.setAttribute("src", "/assets/video_desktop.mp4");
+  }
+};
+
+const resizeYoutube = () => {
+  const video = document.querySelector("iframe");
+  console.log(video.height);
+  // console.log(video.height != "349");
+  console.log(video.height === "349");
+
+  if (window.innerWidth > 560 && video.height !== "349") {
+    console.log("reset");
+    // Reset to default size
+    video.setAttribute("height", "349");
+    video.setAttribute("width", "560");
+  } else {
+    // Resize iframe
+    const video = document.querySelector("iframe");
+    // to calculate 16:9 height, multiply width by 56.25%
+    let height = window.innerWidth * 0.5625;
+    video.setAttribute("height", `${height}`);
+    video.setAttribute("width", `${window.innerWidth}`);
   }
 };
 
