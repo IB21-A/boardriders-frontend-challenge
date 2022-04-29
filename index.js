@@ -1,5 +1,14 @@
 let modal;
 var player;
+
+const navSwiper = new Swiper(".nav-swiper", {
+  direction: "horizontal",
+  loop: false,
+  spaceBetween: 50,
+  speed: 400,
+  slidesPerView: 4.5,
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   handleResize();
 
@@ -10,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   initializeModalButton();
-
   loadImageSwiper();
 });
 
@@ -31,16 +39,14 @@ const updateVideoSrc = () => {
   }
 };
 
-// 2. This code loads the IFrame Player API code asynchronously.
+// This code loads the Youtube IFrame Player API code asynchronously.
 var tag = document.createElement("script");
-
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName("script")[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 // 3. This function creates an <iframe> (and YouTube player)
 //    after the API code downloads.
-
 function onYouTubeIframeAPIReady() {
   player = new YT.Player("player", {
     height: "349",
@@ -52,15 +58,14 @@ function onYouTubeIframeAPIReady() {
   });
 }
 
+// Resize iframe as needed
 const resizeYoutube = () => {
   const video = document.querySelector("iframe");
   if (window.innerWidth > 560) {
-    console.log("reset");
     // Reset to default size
     video.setAttribute("height", "349");
     video.setAttribute("width", "560");
   } else {
-    // Resize iframe
     const video = document.querySelector("iframe");
     // to calculate 16:9 height, multiply width by 56.25%
     // Subtracting width to allow for margin
@@ -68,7 +73,6 @@ const resizeYoutube = () => {
     let height = (window.innerWidth - 16) * 0.5625;
     video.setAttribute("height", `${height}`);
     video.setAttribute("width", `${newWidth}`);
-    console.log(window.innerWidth);
   }
 };
 
@@ -84,12 +88,10 @@ const toggleNavigationSwiper = () => {
 
 const loadImageSwiper = () => {
   const swiper = new Swiper(".swiper", {
-    // Optional parameters
     autoHeight: true,
     direction: "horizontal",
     loop: true,
 
-    // If we need pagination
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -99,7 +101,7 @@ const loadImageSwiper = () => {
       disableOnInteraction: false,
     },
     speed: 400,
-    // Navigation arrows
+
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -121,22 +123,15 @@ const loadImageSwiper = () => {
   });
 };
 
-const navSwiper = new Swiper(".nav-swiper", {
-  direction: "horizontal",
-  loop: false,
-  spaceBetween: 50,
-  speed: 400,
-  slidesPerView: 4.5,
-});
-
 const initializeModalButton = () => {
   document.addEventListener("click", (e) => {
     if (e.target.classList.contains("modal-open")) {
-      console.log(e.target.dataset);
       modal = document.getElementById(e.target.dataset.id);
-      console.log(modal);
       openModal(modal);
-    } else if (e.target.classList.contains("modal-close")) {
+    } else if (
+      e.target.classList.contains("modal-close") ||
+      !e.target.closest(".modal")
+    ) {
       closeModal(modal);
     } else {
       return;
