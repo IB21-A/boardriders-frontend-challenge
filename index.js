@@ -1,14 +1,6 @@
 let modal;
 var player;
 
-const navSwiper = new Swiper(".nav-swiper", {
-  direction: "horizontal",
-  loop: false,
-  spaceBetween: 50,
-  speed: 400,
-  slidesPerView: 4.5,
-});
-
 document.addEventListener("DOMContentLoaded", function () {
   handleResize();
 
@@ -22,6 +14,27 @@ document.addEventListener("DOMContentLoaded", function () {
   loadImageSwiper();
 });
 
+// Initialize Youtube Player
+// This code loads the Youtube IFrame Player API code asynchronously.
+var tag = document.createElement("script");
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName("script")[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// This function creates an <iframe> (and YouTube player)
+// after the API code downloads.
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player("player", {
+    height: "349",
+    width: "560",
+    videoId: "iYAcEdg_7BU",
+    playerVars: {
+      playsinline: 1,
+    },
+  });
+}
+
+// Update elements on page that rely on the page size
 const handleResize = () => {
   updateVideoSrc();
   toggleNavigationSwiper();
@@ -38,25 +51,6 @@ const updateVideoSrc = () => {
     return video.setAttribute("src", "./assets/video_desktop.mp4");
   }
 };
-
-// This code loads the Youtube IFrame Player API code asynchronously.
-var tag = document.createElement("script");
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName("script")[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-// 3. This function creates an <iframe> (and YouTube player)
-//    after the API code downloads.
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player("player", {
-    height: "349",
-    width: "560",
-    videoId: "iYAcEdg_7BU",
-    playerVars: {
-      playsinline: 1,
-    },
-  });
-}
 
 // Resize iframe as needed
 const resizeYoutube = () => {
@@ -86,43 +80,7 @@ const toggleNavigationSwiper = () => {
   }
 };
 
-const loadImageSwiper = () => {
-  const swiper = new Swiper(".swiper", {
-    autoHeight: true,
-    direction: "horizontal",
-    loop: true,
-
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    speed: 400,
-
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-
-    breakpoints: {
-      // when window width is >= 320px
-      320: {
-        slidesPerView: 2.5,
-        spaceBetween: 20,
-      },
-      // when window width is >= 991px
-      991: {
-        slidesPerView: 3,
-        spaceBetween: 50,
-        grabCursor: true,
-      },
-    },
-  });
-};
-
+// Modal
 const initializeModalButton = () => {
   document.addEventListener("click", (e) => {
     if (e.target.classList.contains("modal-open")) {
@@ -164,4 +122,51 @@ const escClose = (e) => {
   if (e.key === "Escape") {
     closeModal(modal);
   }
+};
+
+// Navigation Swiper
+const navSwiper = new Swiper(".nav-swiper", {
+  direction: "horizontal",
+  loop: false,
+  spaceBetween: 50,
+  speed: 400,
+  slidesPerView: 4.5,
+});
+
+// Large Image Carousel Swiper
+const loadImageSwiper = () => {
+  const swiper = new Swiper(".swiper", {
+    autoHeight: true,
+    direction: "horizontal",
+    loop: true,
+
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    speed: 400,
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 2.5,
+        spaceBetween: 20,
+      },
+      // when window width is >= 991px
+      991: {
+        slidesPerView: 3,
+        spaceBetween: 50,
+        grabCursor: true,
+      },
+    },
+  });
 };
