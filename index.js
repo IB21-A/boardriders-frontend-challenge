@@ -147,6 +147,7 @@ const loadImageSwiper = () => {
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,
+      pauseOnMouseEnter: true,
     },
     speed: 400,
 
