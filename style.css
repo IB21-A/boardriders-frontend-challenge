@@ -183,11 +183,12 @@ select {
 
 #hero {
   height: 60vh;
-  width: 100vw;
+  width: 100%;
   background: url(./assets/hero_banner_mobile.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  /* overflow: hidden; */
 }
 
 nav {
@@ -289,7 +290,7 @@ video {
 @media screen and (min-width: 991px) {
   #hero {
     height: 29vh;
-    width: 100vw;
+    width: 100%;
     background: url(./assets/hero_banner_desktop.jpg);
     background-position: center;
     background-repeat: no-repeat;

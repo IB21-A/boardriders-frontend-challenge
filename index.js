@@ -78,13 +78,9 @@ const loadImageSwiper = () => {
 };
 
 const navSwiper = new Swiper(".nav-swiper", {
-  // Optional parameters
-  // autoHeight: true,
-
   direction: "horizontal",
   loop: false,
   spaceBetween: 50,
   speed: 400,
   slidesPerView: 4.5,
-  // Navigation arrows
 });
