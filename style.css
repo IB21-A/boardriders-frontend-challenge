@@ -344,6 +344,9 @@ footer {
     margin-inline: auto;
     transition: var(--transition);
   }
+  .swiper.episode-swiper {
+    max-width: 2000px;
+  }
 }
 
 @media screen and (max-width: 991px) {
